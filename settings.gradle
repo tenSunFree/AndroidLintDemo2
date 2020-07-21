@@ -1,0 +1,4 @@
+include ':module_lint_aar'
+include ':library_lint'
+include ':app'
+rootProject.name = "AndroidLintDemo2"

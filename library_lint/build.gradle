@@ -1,0 +1,29 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    def lint_version = "27.0.1"
+    compileOnly "com.android.tools.lint:lint-api:$lint_version"
+    compileOnly "com.android.tools.lint:lint-checks:$lint_version"
+    testImplementation "com.android.tools.lint:lint:$lint_version"
+    testImplementation "com.android.tools.lint:lint-tests:$lint_version"
+    testImplementation "com.android.tools:testutils:$lint_version"
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+jar {
+    manifest {
+        attributes("Lint-Registry-v2": "com.home.library_lint.AndroidLintIssueRegistry")
+    }
+}
+
+defaultTasks 'assemble'
+// 定義一個方法 lintJarOutput
+configurations { lintJarOutput }
+// 指定定義方法lintJarOutput的作用
+// 此處是獲得調用jar方法後的生成的jar包
+dependencies { lintJarOutput files(jar) }
