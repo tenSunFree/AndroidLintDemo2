@@ -15,8 +15,8 @@ https://github.com/alexjlockwood/android-lint-checks-demo
 預覽
 --------
 <p align="left">
-  <img src="https://i.imgur.com/CLIEz0Q.jpg" width="230"/>
-  <img src="https://i.imgur.com/PS9MZME.jpg" width="230"/>
+  <img src="https://i.imgur.com/CLIEz0Q.jpg" width="430"/>
+  <img src="https://i.imgur.com/PS9MZME.jpg" width="430"/>
 </p> 
 
 備註
